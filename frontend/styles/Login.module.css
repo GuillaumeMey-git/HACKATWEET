@@ -29,22 +29,24 @@
 }
 .signup{
     font-size: 2vh;
-    padding: 5px;
+    padding: 10px;
     width: 22%;
-    border-radius: 15px;
+    border-radius: 25px;
     background-color: #3690ED;
     border: #3690ED 1px;
     color: white;
+    cursor: pointer;
 }
 .p{
     font-size: 22px;
 }
 .signin{
     font-size: 2vh;
-    padding: 5px;
+    padding: 10px;
     width: 22%;
-    border-radius: 15px;
+    border-radius: 25px;
     color: #3690ED;
     border: white solid 1px;
     background-color: #151D27;
+    cursor: pointer;
 }
