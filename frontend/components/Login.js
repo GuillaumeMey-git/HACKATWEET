@@ -26,7 +26,6 @@ function Login() {
     // ---- sign In
 
         const showModalSignIn = () => {
-        console.log('click')
         setIsModalSignInOpen(true);
     };
 
