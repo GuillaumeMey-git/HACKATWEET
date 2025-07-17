@@ -1,18 +1,29 @@
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // <--- IMPORTEZ useEffect !
 
 function Home() {
   const [content, setContent] = useState("");
-
+  const [tweets, setTweets] = useState([]);
   const max_caracters = 280;
 
   const inputMaxContent = (e) => {
     const inputValue = e.target.value;
-
     if (inputValue.length <= max_caracters) {
       setContent(inputValue);
     }
   };
+
+  const fetchTweets = () => {
+    fetch("http://localhost:3000/tweets/")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          setTweets(data.tweets);
+          console.log("Tweets :", data.tweets);
+        }
+      });
+  };
+
   const handleTweet = () => {
     fetch("http://localhost:3000/tweets/new", {
       method: "POST",
@@ -24,11 +35,17 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
         if (data.result) {
-          console.log("Tweet posté avec succès :", data.tweetData);
+          console.log("New tweet:", data.tweetData);
           setContent("");
+          fetchTweets();
         }
       });
   };
+
+  useEffect(() => {
+    fetchTweets();
+  }, []);
+
   return (
     <div>
       <main className={styles.main}>
@@ -46,9 +63,21 @@ function Home() {
             <p className={styles.characterCounter}>
               {content.length}/{max_caracters}
             </p>
-            <button className={styles.button_tweet} onClick={handleTweet}>
+            <button onClick={handleTweet} className={styles.button_tweet}>
               Tweet
             </button>
+          </div>
+
+          <div className={styles.tweets_list_container}>
+            {tweets.length > 0 ? (
+              tweets.map((tweet) => (
+                <div key={tweet._id} className={styles.tweet_card}>
+                  <p className={styles.tweet_message}>{tweet.message}</p>
+                </div>
+              ))
+            ) : (
+              <p>No tweets</p>
+            )}
           </div>
         </div>
       </main>
