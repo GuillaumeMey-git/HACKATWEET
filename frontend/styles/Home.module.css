@@ -1,22 +1,39 @@
 .main {
+  background-color: #151e27;
+  color: white;
+  width: 45%;
+  height: 600px;
+  margin-left: 25%;
+}
+.h1_homepage {
+  margin-left: 5%;
+  font-size: 1.5rem;
+}
+.input_homepage {
+  color: white;
+  width: 70%;
+  margin: 3%;
+  background-color: #151e27;
+}
+.input_container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.first_container {
+  border: 1px solid grey;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.button_tweet {
+  background-color: #368fee;
+  color: white;
+  border-radius: 10%;
+  padding: 0rem 1.5rem;
+  border: none;
+  margin: 0.5rem;
 }
-
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.button_character {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 60%;
 }
