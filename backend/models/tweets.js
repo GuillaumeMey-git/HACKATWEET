@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const tweetSchema = mongoose.Schema({
-    content: String,
-    like: Number,
-    user : {type: mongoose.Schema.Types.ObjectId, ref: 'users'},
+  like: Number,
+  message: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
 });
 
-const Tweet = mongoose.model('tweets', tweetSchema);
+const Tweet = mongoose.model("tweets", tweetSchema);
 
 module.exports = Tweet;
