@@ -2,22 +2,42 @@ import { useState } from 'react';
 import styles from '../styles/Login.module.css';
 import { Modal } from 'antd';
 import SignUp from './SignUp';
+import SignIn from './SignIn';
 
 function Login() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalSignUpOpen, setIsModalSignUpOpen] = useState(false);
+    const [isModalSignInOpen, setIsModalSignInOpen] = useState(false);      
 
-    const showModal = () => {
+    // ---- sign In
+
+    const showModalSignUp = () => {
         console.log('click')
-        setIsModalOpen(true);
+        setIsModalSignUpOpen(true);
     };
 
     const handleOk = () => {
-        setIsModalOpen(false);
+        setIsModalSignUpOpen(false);
     };
 
     const handleCancel = () => {
-        setIsModalOpen(false);
+        setIsModalSignUpOpen(false);
     };
+
+    // ---- sign In
+
+        const showModalSignIn = () => {
+        console.log('click')
+        setIsModalSignInOpen(true);
+    };
+
+    const handleOkIn = () => {
+        setIsModalSignInOpen(false);
+    };
+
+    const handleCancelIn = () => {
+        setIsModalSignInOpen(false);
+    };
+
 
     return (
         <div className={styles.container}>
@@ -27,21 +47,35 @@ function Login() {
                 <h1 className={styles.h1}>See what's <br /> happening</h1>
                 <h2 className={styles.h2}>Join Hackatweet today.</h2>
                 
-                <button className={styles.signup} onClick={showModal}>Sign up</button>
+                <button className={styles.signup} onClick={showModalSignUp}>Sign up</button>
                 
                 <p className={styles.p}>Already have an account?</p>
-                <button className={styles.signin}>Sign in</button>
+                <button className={styles.signin} onClick={showModalSignIn}>Sign in</button>
             </div>
 
             <Modal
-            visible={isModalOpen}
-            title={null}
-            footer={null}
-            closable={false}
-            wrapClassName={styles.customModal}
-            style={{ backgroundColor: 'transparent', boxShadow: 'none', border: 'none' }}
+                title={null}
+                visible={isModalSignUpOpen} 
+                onOk={handleOkIn}
+                onCancel={handleCancel}
+                closable={true}
+                footer={null}
+                wrapClassName={styles.customModal}
             >
                 <SignUp></SignUp>
+            </Modal>
+
+
+            <Modal
+                title={null}
+                visible={isModalSignInOpen} 
+                onOk={handleOk}
+                onCancel={handleCancelIn}
+                closable={true}
+                footer={null}
+                wrapClassName={styles.customModal}
+            >
+                <SignIn></SignIn>
             </Modal>
 
         </div>
