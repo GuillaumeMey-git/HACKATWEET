@@ -18,6 +18,7 @@ function SignIn() {
                 console.log(data)
 				if (data.result) {
 					dispatch(login({ username: userNameSignIn, token: data.token }));
+                    window.location.href = '/home';
 				}
 			});
 	};
@@ -28,7 +29,7 @@ function SignIn() {
             <img className={styles.logo} src='/logofondnoir.png' alt='imageAccueil' />
             <h2>Create your Hackatweet account</h2>
             <input className={styles.input} type="text" placeholder="Username"  onChange={(e) => setUserNameSignIn(e.target.value)} value={userNameSignIn} />
-            <input className={styles.input} type="text" placeholder="Password"  onChange={(e) => setPasswordSignIn(e.target.value)} value={passwordSignIn} />
+            <input className={styles.input} type="password" placeholder="Password"  onChange={(e) => setPasswordSignIn(e.target.value)} value={passwordSignIn} />
             <button className={styles.button} onClick={() => handleConnection()}>Sign in</button>  
         </div>
     );

@@ -20,6 +20,7 @@ function SignUp() {
 			.then(data => {
 				if (data.result) {
 					dispatch(login({ username: userName, token: data.token }));
+                    window.location.href = '/home';
 				}
 			});
 	};
@@ -30,7 +31,7 @@ function SignUp() {
             <h2>Create your Hackatweet account</h2>
             <input className={styles.input} type="text" placeholder="Firstname" id="signUpUsername" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
             <input className={styles.input} type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setUserName(e.target.value)} value={userName} />
-            <input className={styles.input} type="text" placeholder="Password" id="signUpUsername" onChange={(e) => setPassword(e.target.value)} value={password} />
+            <input className={styles.input} type="password" placeholder="Password" id="signUpUsername" onChange={(e) => setPassword(e.target.value)} value={password} />
             <button className={styles.button} onClick={() => handleRegister()}>Sign in</button>  
         </div>
     );
