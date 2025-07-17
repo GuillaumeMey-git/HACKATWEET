@@ -16,8 +16,7 @@ function SignUp() {
             <input className={styles.input} type="text" placeholder="Firstname" id="signUpUsername" onChange={(e) => setFirstName(e.target.value)} value={firstName} />
             <input className={styles.input} type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setUserName(e.target.value)} value={userName} />
             <input className={styles.input} type="text" placeholder="Password" id="signUpUsername" onChange={(e) => setPassword(e.target.value)} value={password} />
-            <button className={styles.button}>Sign in</button>
-            
+            <button className={styles.button}>Sign in</button>  
         </div>
     );
 }
