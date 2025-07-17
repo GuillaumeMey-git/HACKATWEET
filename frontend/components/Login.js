@@ -34,13 +34,12 @@ function Login() {
             </div>
 
             <Modal
-                title={null}
-                visible={isModalOpen} 
-                onOk={handleOk}
-                onCancel={handleCancel}
-                closable={true}
-                footer={null}
-                wrapClassName={styles.customModal}
+            visible={isModalOpen}
+            title={null}
+            footer={null}
+            closable={false}
+            wrapClassName={styles.customModal}
+            style={{ backgroundColor: 'transparent', boxShadow: 'none', border: 'none' }}
             >
                 <SignUp></SignUp>
             </Modal>
