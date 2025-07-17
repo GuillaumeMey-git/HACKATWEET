@@ -1,0 +1,52 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.image{
+    height: 100%;
+    width: 40%;
+}
+.logo{
+    height: 10%;
+    width: 10%;
+}
+.textContainer{
+    padding-left: 2%;
+    color: white;
+    background-color: #151D27;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.h1{
+    font-size: 12vh;
+}
+.h2{
+    font-size: 5vh;
+    margin-top: -5%;
+}
+.signup{
+    font-size: 2vh;
+    padding: 10px;
+    width: 22%;
+    border-radius: 25px;
+    background-color: #3690ED;
+    border: #3690ED 1px;
+    color: white;
+    cursor: pointer;
+}
+.p{
+    font-size: 22px;
+}
+.signin{
+    font-size: 2vh;
+    padding: 10px;
+    width: 22%;
+    border-radius: 25px;
+    color: #3690ED;
+    border: white solid 1px;
+    background-color: #151D27;
+    cursor: pointer;
+}

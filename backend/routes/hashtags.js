@@ -1,12 +1,10 @@
 var express = require('express');
 var router = express.Router();
-const bcrypt = require('bcrypt');
-const uid2 = require('uid2');
-const User = require('../models/users');
+const Hashtag = require('../models/hashtags');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
-  User.find().then(data=>res.send(data));
+    Hashtag.find().then(data=>res.send(data));
 });
 
 module.exports = router;

@@ -1,0 +1,46 @@
+.signUpContainer{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    background-color: #151D27;
+    align-items: center;
+    color: white;
+    border-radius: 25px;
+}
+.input{
+    width: 75%;
+    background-color: #151D27;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding: 5px;
+    color: white;
+}
+.logo{
+    margin-top: 20px;
+    height: 10%;
+    width: 10%;
+}
+.button{
+    width: 75%;
+    font-size: 2vh;
+    padding: 7px;
+    border-radius: 25px;
+    border: white solid 1px;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.customModal {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.ant-modal-content {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
