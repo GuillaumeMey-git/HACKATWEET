@@ -19,7 +19,7 @@ function SignUp() {
 		}).then(response => response.json())
 			.then(data => {
 				if (data.result) {
-					dispatch(login({ username: userName, token: data.token }));
+					dispatch(login({ username: userName, token: data.token, firstname: data.firstname }));
                     window.location.href = '/home';
 				}
 			});
