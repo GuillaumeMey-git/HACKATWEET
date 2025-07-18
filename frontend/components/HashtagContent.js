@@ -3,12 +3,6 @@ import { useState, useEffect } from 'react';
 import Hashtag from './Hashtag';
 
 
-
-
-// faire affichage de tweet qui corresponds au # quand on click dessus
-// faire une recherche par hashtag
-
-
 function HashtagContent() {
 
 const [hashtagData, setHashtagData] = useState([]);

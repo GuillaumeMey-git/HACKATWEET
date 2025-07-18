@@ -4,13 +4,22 @@ import { useSelector } from 'react-redux';
 
 function TweetContent() {
 
-    // style de tweets
+
     // faire un filtre et fetch tous les tweets
     // display les tweets   
 
     const hashtag = useSelector((state)=>state.hashtag.value);
     const [inputContent, setInputContent] = useState(hashtag.hashtag.hashtag)
+
+
     
+
+		// fetch('http://localhost:3000/hashtags', {
+		// 	method: 'POST',
+		// 	headers: { 'Content-Type': 'application/json' },
+		// 	body: JSON.stringify({ hashtag: inputContent }),
+		// }).then(response => response.json())
+		// 	.then(data => {console.log(data)})
 
 
     return (
