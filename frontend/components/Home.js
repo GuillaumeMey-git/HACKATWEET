@@ -1,15 +1,9 @@
 import styles from "../styles/Home.module.css";
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBookmark,
-  faEyeSlash,
-  faTrashCan,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
+
 import Tweets from "./Tweets";
 
-function Home(props) {
+function Home() {
   const [content, setContent] = useState("");
   const [tweets, setTweets] = useState([]);
 
