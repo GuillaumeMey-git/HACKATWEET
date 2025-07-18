@@ -1,5 +1,6 @@
 .hashtag{
     padding: 15px;
+    cursor: pointer;
 }
 .hashtag:hover{
     background-color: #242D3C;
