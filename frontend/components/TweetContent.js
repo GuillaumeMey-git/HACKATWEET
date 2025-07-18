@@ -1,9 +1,12 @@
-import styles from '../styles/TweetContent.module.css';
-import { useState, useEffect } from "react"; // <--- IMPORTEZ useEffect !
+import styles from "../styles/Home.module.css";
+import { useState, useEffect } from "react";
+
+import Tweets from "./Tweets";
 
 function TweetContent() {
     const [content, setContent] = useState("");
     const [tweets, setTweets] = useState([]);
+
     const max_caracters = 280;
 
     const inputMaxContent = (e) => {
@@ -47,6 +50,7 @@ function TweetContent() {
     }, []);
 
     return (
+        <div>
         <main className={styles.main}>
             <div className={styles.first_container}>
             <h1 className={styles.h1_homepage}>Home</h1>
@@ -69,18 +73,14 @@ function TweetContent() {
 
             <div className={styles.tweets_list_container}>
                 {tweets.length > 0 ? (
-                tweets.map((tweet) => (
-                    <div key={tweet._id} className={styles.tweet_card}>
-                    <p className={styles.tweet_message}>{tweet.message}</p>
-                    </div>
-                ))
+                tweets.map((tweet, i) => <Tweets key={i} data={tweet} onDelete={fetchTweets}/>)
                 ) : (
                 <p>No tweets</p>
                 )}
             </div>
             </div>
         </main>
+        </div>
     );
 }
-
 export default TweetContent;

@@ -20,4 +20,12 @@ router.get("/", (req, res) => {
   });
 });
 
+router.delete("/:id", (req, res) => {
+  const tweetId = req.params.id;
+
+  Tweet.findByIdAndDelete(tweetId).then(() => {
+    res.json({ result: true, messageContent: "Tweet supprimé avec succès." });
+  });
+});
+
 module.exports = router;

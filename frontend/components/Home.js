@@ -1,8 +1,13 @@
+
+import { useState, useEffect } from "react";
+
+
 import styles from '../styles/Home.module.css';
 import NavContent from "./navContent";
 import TweetContent from "./tweetContent";
 import HashtagContent from "./hashtagContent";
 import { useSelector } from 'react-redux';
+
 
 function Home() {
 
@@ -15,9 +20,9 @@ function Home() {
 
   return(
     <div className={styles.homeContainer}>
-      <NavContent></NavContent>
-      <TweetContent></TweetContent>
-      <HashtagContent></HashtagContent>
+      <NavContent/>
+      <TweetContent/>
+      <HashtagContent/>
     </div>    
   )
 

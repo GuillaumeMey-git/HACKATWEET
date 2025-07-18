@@ -14,7 +14,7 @@ function TweetContent() {
 
 
     return (
-        <div className={styles.main}>
+        <div className={styles.mainn}>
             <div className={styles.serchContent}>
                 <h2 className={styles.h2}>Hashtag</h2>
                 <input className={styles.input} onChange={(e) => setInputContent(e.target.value)} value={inputContent}></input>
