@@ -1,0 +1,10 @@
+.main {
+    background-color: #151e27;
+    color: white;
+    width: 60%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+}

@@ -1,22 +1,24 @@
 import styles from '../styles/HashtagContent.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Hashtag from './Hashtag';
 
 
-// faire composant d'affichage de # + compteur
+
 // faire affichage de tweet qui corresponds au # quand on click dessus
+// faire une recherche par hashtag
 
 
 function HashtagContent() {
 
-    const [hashtagData, setHashtagData] = useState([]);
+const [hashtagData, setHashtagData] = useState([]);
 
-    fetch('http://localhost:3000/hashtags')
-        .then(response=>response.json())
+    useEffect(() => {
+        fetch('http://localhost:3000/hashtags')
+        .then(response => response.json())
         .then(data => {
             setHashtagData(data.hashtag);
-            console.log("ici: ",data.hashtag.compteur)
-    })
+        })
+    }, []);
 
     const hashtagList = hashtagData.map((data, i) => {
         return <Hashtag key={i} {...data}/>;
