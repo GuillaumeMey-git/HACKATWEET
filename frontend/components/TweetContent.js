@@ -1,4 +1,4 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/TweetContent.module.css";
 import { useState, useEffect } from "react";
 
 import Tweets from "./Tweets";
@@ -50,27 +50,26 @@ function TweetContent() {
     }, []);
 
     return (
-        <div>
         <main className={styles.main}>
-            <div className={styles.first_container}>
-            <h1 className={styles.h1_homepage}>Home</h1>
-            <div className={styles.input_container}>
-                <input
-                className={styles.input_homepage}
-                placeholder="What's up ?"
-                onChange={inputMaxContent}
-                value={content}
-                ></input>
+            <div className={styles.faistweet}>
+                <h2 className={styles.h2}>Home</h2>
+                <div className={styles.input_container}>
+                    <input
+                    className={styles.input_homepage}
+                    placeholder="What's up ?"
+                    onChange={inputMaxContent}
+                    value={content}
+                    ></input>
+                </div>
+                <div className={styles.button_character}>
+                    <p className={styles.characterCounter}>
+                    {content.length}/{max_caracters}
+                    </p>
+                    <button onClick={handleTweet} className={styles.button_tweet}>
+                    Tweet
+                    </button>
+                </div>
             </div>
-            <div className={styles.button_character}>
-                <p className={styles.characterCounter}>
-                {content.length}/{max_caracters}
-                </p>
-                <button onClick={handleTweet} className={styles.button_tweet}>
-                Tweet
-                </button>
-            </div>
-
             <div className={styles.tweets_list_container}>
                 {tweets.length > 0 ? (
                 tweets.map((tweet, i) => <Tweets key={i} data={tweet} onDelete={fetchTweets}/>)
@@ -78,9 +77,8 @@ function TweetContent() {
                 <p>No tweets</p>
                 )}
             </div>
-            </div>
+
         </main>
-        </div>
     );
 }
 export default TweetContent;
