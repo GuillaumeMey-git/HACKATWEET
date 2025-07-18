@@ -80,7 +80,7 @@
   padding: 15px;
   box-sizing: border-box;
   overflow-y: auto; /* defilement */
-  max-height: 400px;
+  height:90%
 }
 
 .tweet_card {
