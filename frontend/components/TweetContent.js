@@ -47,7 +47,6 @@ function TweetContent() {
     }, []);
 
     return (
-        <div>
         <main className={styles.main}>
             <div className={styles.first_container}>
             <h1 className={styles.h1_homepage}>Home</h1>
@@ -81,7 +80,6 @@ function TweetContent() {
             </div>
             </div>
         </main>
-        </div>
     );
 }
 

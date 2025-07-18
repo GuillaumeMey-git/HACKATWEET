@@ -30,7 +30,7 @@ function NavContent() {
                     <div> <FontAwesomeIcon icon={faUser} className={styles.logoUser}/></div>
                     <div className={styles.noms}>
                         {user.firstname} <br></br>
-                        @ {user.username}
+                        @{user.username}
                     </div>
                 </div>
                 <button className={styles.button} onClick={() => verslogout()}>Logout</button>

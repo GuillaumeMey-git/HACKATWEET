@@ -1,10 +1,12 @@
 import styles from '../styles/HashtagContent.module.css';
 
-// faire route
 // faire fetch
-// faire composant de recherche
 // faire composant d'affichage de # + compteur
 // faire affichage de tweet qui corresponds au # quand on click dessus
+
+fetch('http://localhost:3000/hashtags')
+.then(response=>response.json())
+.then(data => console.log("trends: ",data.hashtag))
 
 function HashtagContent() {
     return (

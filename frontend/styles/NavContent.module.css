@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     background-color: #151e27;
-    width: 120%;
+    width: 22%;
     color: white;
     border-right: solid 1px white;
 }
@@ -43,6 +43,7 @@
 
 }
 .noms{
-    margin-left: -72%;
+    margin-left: -75%;
     width: 50%;
+    color: white;
 }
