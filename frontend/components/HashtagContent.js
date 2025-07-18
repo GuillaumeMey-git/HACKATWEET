@@ -1,25 +1,35 @@
 import styles from '../styles/HashtagContent.module.css';
+import { useState } from 'react';
+import Hashtag from './Hashtag';
 
-// faire fetch
+
 // faire composant d'affichage de # + compteur
 // faire affichage de tweet qui corresponds au # quand on click dessus
 
-fetch('http://localhost:3000/hashtags')
-.then(response=>response.json())
-.then(data => console.log("trends: ",data.hashtag))
 
 function HashtagContent() {
+
+    const [hashtagData, setHashtagData] = useState([]);
+
+    fetch('http://localhost:3000/hashtags')
+        .then(response=>response.json())
+        .then(data => {
+            setHashtagData(data.hashtag);
+            console.log("ici: ",data.hashtag.compteur)
+    })
+
+    const hashtagList = hashtagData.map((data, i) => {
+        return <Hashtag key={i} {...data}/>;
+    });
+
+
     return (
         <div className={styles.hashtagContaine}>
             <h2 className={styles.h2}>Trends</h2>
             <div className={styles.hashtagList}>
 
-                // faire un composant
-                <p>#test</p>
-                <p>1 tweet</p>
-
-                <p>#test</p>
-                <p>2 tweet</p>
+                {hashtagList}
+                
             </div>
         </div>
     )
