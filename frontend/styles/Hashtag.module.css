@@ -1,5 +1,10 @@
+.hashtag{
+    padding: 15px;
+}
+.hashtag:hover{
+    background-color: #242D3C;
+}
 .h3{
-    margin-top: 30px;
     margin-left: 5%;
     font-size: 20px;
 }

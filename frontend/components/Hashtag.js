@@ -9,7 +9,7 @@ function Hashtag(props) {
     const plusriels = `${props.compteur} ${props.compteur === "1" ? "Tweet" : "Tweets"}`;
 
     return (
-        <div>
+        <div className={styles.hashtag}>
             <h3 className={styles.h3}>{props.hashtag}</h3>
             <p className={styles.p}>{plusriels}</p>
         </div>
