@@ -1,0 +1,33 @@
+.mainn {
+    background-color: #151e27;
+    color: white;
+    width: 60%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+.h2{
+    margin-left: 5%;
+    font-size: 26px;
+}
+.serchContent{
+    height: 25%;
+    width: 100%;
+    border-bottom: solid 1px white;
+    display: flex;
+    flex-direction: column;
+}
+.input{
+    background-color: #1B232C;
+    border: solid 1px #1B232C;
+    color: white;
+    margin: auto;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 18px;
+    width: 80%;
+}
+.tweetContainer{
+    height: 75%;
+}

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login } from '../reducers/user'
 
+// retirer les bandes blanches deguelaaaaaaaaasses
+
 
 function SignIn() {
     const dispatch = useDispatch();
@@ -18,7 +20,7 @@ function SignIn() {
 			.then(data => {
                 console.log(data)
 				if (data.result) {
-					dispatch(login({ username: userNameSignIn, token: data.token }));
+					dispatch(login({ username: userNameSignIn, token: data.token, firstname: data.firstname }));
                     window.location.href = '/home';
 				}
 			});
