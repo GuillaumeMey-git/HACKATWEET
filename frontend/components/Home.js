@@ -1,9 +1,18 @@
 import styles from "../styles/Home.module.css";
-import { useState, useEffect } from "react"; // <--- IMPORTEZ useEffect !
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faBookmark,
+  faEyeSlash,
+  faTrashCan,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
+import Tweets from "./Tweets";
 
-function Home() {
+function Home(props) {
   const [content, setContent] = useState("");
   const [tweets, setTweets] = useState([]);
+
   const max_caracters = 280;
 
   const inputMaxContent = (e) => {
@@ -70,11 +79,7 @@ function Home() {
 
           <div className={styles.tweets_list_container}>
             {tweets.length > 0 ? (
-              tweets.map((tweet) => (
-                <div key={tweet._id} className={styles.tweet_card}>
-                  <p className={styles.tweet_message}>{tweet.message}</p>
-                </div>
-              ))
+              tweets.map((tweet, i) => <Tweets key={i} data={tweet} onDelete={fetchTweets}/>)
             ) : (
               <p>No tweets</p>
             )}
